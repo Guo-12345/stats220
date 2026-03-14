@@ -14,4 +14,4 @@ What I want to get from this course?
 
 The useful link of github is (https://github.com/).
 
-A meme that captures how I currently feel about my university studies is [![The Great Gatsby GIF](https://media.giphy.com/media/BPJmthQ3YRwD6QqcVD/giphy.gif)](https://giphy.com/gifs/HBOMax-hbomax-the-great-gatsby-2013-thegreatgatsbyonhbomax-BPJmthQ3YRwD6QqcVD)
+A meme that captures how I currently feel about my university studies is ![](https://media1.giphy.com/media/BPJmthQ3YRwD6QqcVD/giphy.gif)
