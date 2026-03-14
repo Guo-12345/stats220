@@ -9,8 +9,8 @@ A little about me:
 - I am interested in learning about how to finish a project in personal.
 
 What I want to get from this course?
-1 How to use github correctly?
-2 to enjoy the process of doing project.
+1 How to use github correctly
+2 to enjoy the process of doing project
 
 The useful link of github is (https://github.com/).
 
