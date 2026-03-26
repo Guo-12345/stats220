@@ -13,19 +13,9 @@ logged_data <- read_csv(
   show_col_types = FALSE
 )
 
-latest_data <- logged_data
-
-names(latest_data) <- c(
-  "timestamp",
-  "date",
-  "location",
-  "price",
-  "opinion",
-  "decision"
-)
-
-latest_data <- latest_data %>%
-  mutate(price = as.numeric(price))
+price <- as.numeric(logged_data[[4]])
+opinion <- logged_data[[5]]
+decision <- logged_data[[6]]
 ```
 
 ```{css}
@@ -49,13 +39,12 @@ This report presents observations of current petrol prices collected over severa
 
 It focuses on how people felt about the petrol prices they observed and whether those prices affected their decisions.
 
-The average petrol price in this dataset is `r round(mean(latest_data$price, na.rm = TRUE), 2)` NZD per litre.
+The average petrol price in this dataset is `r round(mean(price, na.rm = TRUE), 2)` NZD per litre.
 
-The minimum petrol price recorded is `r min(latest_data$price, na.rm = TRUE)` NZD per litre.
+The minimum petrol price recorded is `r min(price, na.rm = TRUE)` NZD per litre.
 
 ```{r}
-latest_data %>%
-  ggplot(aes(x = opinion)) +
+ggplot(logged_data, aes(x = opinion)) +
   geom_bar() +
   labs(
     title = "Opinions on current petrol prices",
@@ -65,8 +54,7 @@ latest_data %>%
 ```
 
 ```{r}
-latest_data %>%
-  ggplot(aes(x = decision)) +
+ggplot(logged_data, aes(x = decision)) +
   geom_bar() +
   labs(
     title = "Effect of petrol price on decision",
