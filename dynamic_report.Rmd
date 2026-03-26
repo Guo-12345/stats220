@@ -13,14 +13,16 @@ logged_data <- read_csv(
   show_col_types = FALSE
 )
 
+names(logged_data) <- make.names(names(logged_data))
+
 latest_data <- logged_data %>%
   rename(
     timestamp = Timestamp,
-    date = `What date did you observe the petrol price?`,
-    location = `Where did you see the petrol price?`,
-    price = `What was the petrol price per litre (NZD)?`,
-    opinion = `How do you feel about the current petrol price?`,
-    decision = `Did the petrol price affect your decision or behaviour?`
+    date = What.date.did.you.observe.the.petrol.price.,
+    location = Where.did.you.see.the.petrol.price.,
+    price = What.was.the.petrol.price.per.litre..NZD.,
+    opinion = How.do.you.feel.about.the.current.petrol.price.,
+    decision = Did.the.petrol.price.affect.your.decision.or.behaviour.
   ) %>%
   mutate(price = as.numeric(price))
 ```
