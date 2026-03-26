@@ -23,7 +23,28 @@ latest_data <- logged_data %>%
     opinion = 5,
     decision = 6
   )
-```
+``````{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+library(tidyverse)
+
+# 1. 尝试读取数据
+url <- "[https://docs.google.com/spreadsheets/d/e/2PACX-1vQlBGNLHIJEcG260DORd1QnqG-7CCSvl1QoX-b5aK0tsE8l1onaDP51CvLc6_JxWoSU4wICqH3PAD5T/pub?gid=1413703802&single=true&output=csv](https://docs.google.com/spreadsheets/d/e/2PACX-1vQlBGNLHIJEcG260DORd1QnqG-7CCSvl1QoX-b5aK0tsE8l1onaDP51CvLc6_JxWoSU4wICqH3PAD5T/pub?gid=1413703802&single=true&output=csv)"
+logged_data <- read_csv(url)
+
+# 2. 使用列的序号 (1, 2, 3...) 而不是长长的字符串来重命名
+# 这样即使表头变了，只要顺序没变，代码就不会报错
+latest_data <- logged_data %>%
+  rename(
+    timestamp = 1,
+    date = 2,
+    location = 3,
+    price = 4,
+    opinion = 5,
+    decision = 6
+  )
+
+# 3. 确保 price 是数字类型（防止读取时被误判为字符）
+latest_data$price <- as.numeric(latest_data$price)
 ```{css}
 body {
   font-family: Arial, sans-serif;
