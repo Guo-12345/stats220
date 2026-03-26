@@ -15,12 +15,12 @@ logged_data <- read_csv(
 
 latest_data <- logged_data %>%
   rename(
-    timestamp = Timestamp,
-    date = `What date did you observe the petrol price?`,
-    location = `Where did you see the petrol price?`,
-    price = `What was the petrol price per litre ?`,
-    opinion = `How do you feel about the current petrol price?`,
-    decision = `Did the petrol price affect your decision ?`
+    timestamp = `Timestamp`,
+    date = What date did you observe the petrol price?,
+    location = Where did you see the petrol price?,
+    price = What was the petrol price per litre ?,
+    opinion = How do you feel about the current petrol price?,
+    decision = Did the petrol price affect your decision ?
   ) %>%
   mutate(price = as.numeric(price))
 ```
